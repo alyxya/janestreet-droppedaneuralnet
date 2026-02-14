@@ -28,15 +28,18 @@ Solution approach:
    correctly by Hungarian).
 
 3. ORDER THE 48 BLOCKS
-   Initial ordering: sort blocks by |f(x)| (magnitude of the residual addition
-   out(relu(inp(x)))) computed on raw inputs. Blocks that make smaller
-   adjustments tend to be earlier in the network.
+   Initial ordering: iterative greedy selection. Starting from the raw input,
+   at each step pick the remaining block whose residual f(x) has the smallest
+   magnitude, apply it, and repeat. The intuition is that each block makes a
+   small adjustment to the residual stream, and the correct next block is the
+   one that perturbs the current state the least.
 
-   This gives a surprisingly good initial ordering (corr=0.972 with predictions).
+   This gets 38/48 blocks correct (corr=0.9998 with predictions). The
+   mismatches are all in the middle where |f(x)| values are very close.
 
    Refinement: greedy adjacent swaps (bubble sort). Repeatedly sweep through
    the ordering and swap adjacent blocks if it reduces MSE vs known predictions.
-   Converges to MSE=0 (exact match) in 14 passes / 107 total swaps.
+   Converges to MSE=0 (exact match) in a few passes.
 
 4. RESULT
    The final permutation perfectly reproduces the model's predictions
@@ -127,16 +130,30 @@ def make_block(inp_id, out_id):
     block.out.load_state_dict({"weight": pieces[out_id]["weight"], "bias": pieces[out_id]["bias"]})
     return block
 
-# Initial order: sort by |f(x)| on raw inputs
-print("Computing initial ordering by |f(x)|...")
-f_norms = []
+# Initial order: iterative greedy — at each step pick the block with smallest |f(x)|
+print("Computing initial ordering (iterative greedy by smallest |f(x)|)...")
+remaining = list(pair_map.items())
+order = []
+x = inputs.clone()
+
 with torch.no_grad():
-    for ii, oi in pair_map.items():
-        block = make_block(ii, oi)
-        f_x = block(inputs) - inputs
-        f_norms.append((f_x.norm(dim=1).mean().item(), ii, oi))
-f_norms.sort()
-order = [(ii, oi) for _, ii, oi in f_norms]
+    for step in range(len(remaining)):
+        best_norm = float("inf")
+        best_idx = -1
+        best_f = None
+        for idx, (ii, oi) in enumerate(remaining):
+            block = make_block(ii, oi)
+            f_x = block(x) - x
+            fn = f_x.norm(dim=1).mean().item()
+            if fn < best_norm:
+                best_norm = fn
+                best_idx = idx
+                best_f = f_x
+        ii, oi = remaining.pop(best_idx)
+        x = x + best_f
+        order.append((ii, oi))
+        if step % 12 == 0 or step == 47:
+            print(f"  Step {step:2d}: inp {ii:2d}/out {oi:2d}  |f(x)|={best_norm:.4f}  x_norm={x.norm(dim=1).mean():.4f}")
 
 def evaluate(order):
     with torch.no_grad():
