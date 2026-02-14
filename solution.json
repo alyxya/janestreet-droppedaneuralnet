@@ -1,0 +1,349 @@
+{
+  "permutation": [
+    43,
+    34,
+    65,
+    22,
+    69,
+    89,
+    28,
+    12,
+    27,
+    76,
+    81,
+    8,
+    5,
+    21,
+    62,
+    79,
+    64,
+    70,
+    94,
+    96,
+    4,
+    17,
+    48,
+    9,
+    23,
+    46,
+    14,
+    33,
+    95,
+    26,
+    50,
+    66,
+    1,
+    40,
+    15,
+    67,
+    41,
+    92,
+    16,
+    83,
+    77,
+    32,
+    10,
+    20,
+    3,
+    53,
+    45,
+    19,
+    87,
+    71,
+    88,
+    54,
+    39,
+    38,
+    18,
+    25,
+    56,
+    30,
+    91,
+    29,
+    44,
+    82,
+    35,
+    24,
+    61,
+    80,
+    86,
+    57,
+    31,
+    36,
+    13,
+    7,
+    59,
+    52,
+    68,
+    47,
+    84,
+    63,
+    74,
+    90,
+    0,
+    75,
+    73,
+    11,
+    37,
+    6,
+    58,
+    78,
+    42,
+    55,
+    49,
+    72,
+    2,
+    51,
+    60,
+    93,
+    85
+  ],
+  "order": [
+    {
+      "position": 0,
+      "inp": 43,
+      "out": 34
+    },
+    {
+      "position": 1,
+      "inp": 65,
+      "out": 22
+    },
+    {
+      "position": 2,
+      "inp": 69,
+      "out": 89
+    },
+    {
+      "position": 3,
+      "inp": 28,
+      "out": 12
+    },
+    {
+      "position": 4,
+      "inp": 27,
+      "out": 76
+    },
+    {
+      "position": 5,
+      "inp": 81,
+      "out": 8
+    },
+    {
+      "position": 6,
+      "inp": 5,
+      "out": 21
+    },
+    {
+      "position": 7,
+      "inp": 62,
+      "out": 79
+    },
+    {
+      "position": 8,
+      "inp": 64,
+      "out": 70
+    },
+    {
+      "position": 9,
+      "inp": 94,
+      "out": 96
+    },
+    {
+      "position": 10,
+      "inp": 4,
+      "out": 17
+    },
+    {
+      "position": 11,
+      "inp": 48,
+      "out": 9
+    },
+    {
+      "position": 12,
+      "inp": 23,
+      "out": 46
+    },
+    {
+      "position": 13,
+      "inp": 14,
+      "out": 33
+    },
+    {
+      "position": 14,
+      "inp": 95,
+      "out": 26
+    },
+    {
+      "position": 15,
+      "inp": 50,
+      "out": 66
+    },
+    {
+      "position": 16,
+      "inp": 1,
+      "out": 40
+    },
+    {
+      "position": 17,
+      "inp": 15,
+      "out": 67
+    },
+    {
+      "position": 18,
+      "inp": 41,
+      "out": 92
+    },
+    {
+      "position": 19,
+      "inp": 16,
+      "out": 83
+    },
+    {
+      "position": 20,
+      "inp": 77,
+      "out": 32
+    },
+    {
+      "position": 21,
+      "inp": 10,
+      "out": 20
+    },
+    {
+      "position": 22,
+      "inp": 3,
+      "out": 53
+    },
+    {
+      "position": 23,
+      "inp": 45,
+      "out": 19
+    },
+    {
+      "position": 24,
+      "inp": 87,
+      "out": 71
+    },
+    {
+      "position": 25,
+      "inp": 88,
+      "out": 54
+    },
+    {
+      "position": 26,
+      "inp": 39,
+      "out": 38
+    },
+    {
+      "position": 27,
+      "inp": 18,
+      "out": 25
+    },
+    {
+      "position": 28,
+      "inp": 56,
+      "out": 30
+    },
+    {
+      "position": 29,
+      "inp": 91,
+      "out": 29
+    },
+    {
+      "position": 30,
+      "inp": 44,
+      "out": 82
+    },
+    {
+      "position": 31,
+      "inp": 35,
+      "out": 24
+    },
+    {
+      "position": 32,
+      "inp": 61,
+      "out": 80
+    },
+    {
+      "position": 33,
+      "inp": 86,
+      "out": 57
+    },
+    {
+      "position": 34,
+      "inp": 31,
+      "out": 36
+    },
+    {
+      "position": 35,
+      "inp": 13,
+      "out": 7
+    },
+    {
+      "position": 36,
+      "inp": 59,
+      "out": 52
+    },
+    {
+      "position": 37,
+      "inp": 68,
+      "out": 47
+    },
+    {
+      "position": 38,
+      "inp": 84,
+      "out": 63
+    },
+    {
+      "position": 39,
+      "inp": 74,
+      "out": 90
+    },
+    {
+      "position": 40,
+      "inp": 0,
+      "out": 75
+    },
+    {
+      "position": 41,
+      "inp": 73,
+      "out": 11
+    },
+    {
+      "position": 42,
+      "inp": 37,
+      "out": 6
+    },
+    {
+      "position": 43,
+      "inp": 58,
+      "out": 78
+    },
+    {
+      "position": 44,
+      "inp": 42,
+      "out": 55
+    },
+    {
+      "position": 45,
+      "inp": 49,
+      "out": 72
+    },
+    {
+      "position": 46,
+      "inp": 2,
+      "out": 51
+    },
+    {
+      "position": 47,
+      "inp": 60,
+      "out": 93
+    }
+  ],
+  "last_layer": 85,
+  "verification": {
+    "corr_with_pred": 0.9999999999999872,
+    "corr_with_true": 0.9404875678687566,
+    "mae_with_pred": 9.696609026832448e-08
+  }
+}
